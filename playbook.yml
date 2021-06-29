@@ -1,9 +1,9 @@
 ---
-- name: vagrant-dev-env
+- name: vagrrant-dev-env
   hosts: default
   become: yes
   tasks:
-  - name: Install git
+  - name: Install Git
     apt:
       name: git
       state: present
@@ -12,6 +12,18 @@
     apt:
       name: vim
       state: present
+      update_cache: yes
+  - name: Install Python
+    apt:
+      name: python3.8
+      state: present
+      update_cache: yes
+  - name: Install Python
+    apt:
+      name: python3-pip
+      state: present
+      update_cache: yes
+
   - name: Git clone repo
     git:
       repo: "https://github.com/berkguzel/vagrant-flask-dev-env.git"
@@ -20,3 +32,4 @@
       force: yes
       recursive: no
       version: main
+~                       
