@@ -9,7 +9,11 @@ Vagrant.configure("2") do |config|
       args: "-p 5000:5000"
     d.run "containrrr/watchtower",
       args: "-d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock",
-      cmd: "-i 100"
+      cmd: "-i 40"
+  config.vm.provision "ansible" do |ansible|
+    ansible.limit = "all"
+    ansible.playbook = "playbook.yml"
+    end
   end
 end
 
