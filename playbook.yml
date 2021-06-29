@@ -1,0 +1,22 @@
+---
+- name: vagrant-dev-env
+  hosts: default
+  become: yes
+  tasks:
+  - name: Install git
+    apt:
+      name: git
+      state: present
+      update_cache: yes
+  - name: Install vim
+    apt:
+      name: vim
+      state: present
+  - name: Git clone repo
+    git:
+      repo: "https://github.com/berkguzel/vagrant-flask-dev-env.git"
+      dest: "/home/vagrant/vagrant-flask-dev-env.git"
+      accept_hostkey: yes
+      force: yes
+      recursive: no
+      version: main
