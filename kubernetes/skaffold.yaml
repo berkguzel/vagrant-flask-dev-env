@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta19
+kind: Config
+metadata:
+  name: demo-skaff
+build:
+  artifacts:
+  - image: my-image
+    context: ../
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
