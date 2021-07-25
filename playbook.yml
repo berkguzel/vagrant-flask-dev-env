@@ -1,5 +1,5 @@
 ---
-- name: vagrrant-dev-env
+- name: vagrant-dev-env
   hosts: default
   become: yes
   tasks:
@@ -32,4 +32,4 @@
       force: yes
       recursive: no
       version: main
-~                       
+                             
