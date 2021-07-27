@@ -34,7 +34,7 @@ spec:
           # Use secret in real usage
         - name: MYSQL_DATABASE
           value: flaskapp 
-        - name: MYSQL_PASSWORD
+        - name: MYSQL_ROOT_PASSWORD
           value: "1903"
         ports:
         - containerPort: 3306
