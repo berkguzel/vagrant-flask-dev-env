@@ -12,6 +12,7 @@ deploy:
   kubectl:
     manifests:
     - mysql.yaml
+    - flask-svc.yaml
     - deployment.yaml
     - pv.yaml
     - pvc.yaml
