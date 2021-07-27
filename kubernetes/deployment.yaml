@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: my-app
   name: my-app
@@ -10,15 +9,24 @@ spec:
   selector:
     matchLabels:
       app: my-app
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: my-app
     spec:
       containers:
-      - image: my-image
+      - image: 227500/flaskapi
         name: my-image
-        resources: {}
-status: {}
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MYSQL_USERNAME
+          value: root
+        - name: MYSQL_ROOT_PASSWORD 
+          value: "1903"
+        - name: MYSQL_PORT_3306_TCP_ADDR
+          value: mysql-svc
+        - name: MYSQL_PORT_3306_TCP_PORT
+          value: "3306"
+        - name: MYSQL_INSTANCE_NAME
+          value: flaskapp   

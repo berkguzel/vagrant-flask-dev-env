@@ -4,11 +4,14 @@ metadata:
   name: demo-skaff
 build:
   artifacts:
-  - image: my-image
-    context: ../
+  - image: 227500/flaskapi
+    context: .
     docker:
       dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
+    - mysql.yaml
     - deployment.yaml
+    - pv.yaml
+    - pcv.yaml
