@@ -14,4 +14,4 @@ deploy:
     - mysql.yaml
     - deployment.yaml
     - pv.yaml
-    - pcv.yaml
+    - pvc.yaml
