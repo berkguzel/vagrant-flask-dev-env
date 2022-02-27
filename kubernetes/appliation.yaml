@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-flask
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: flasken
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: kubernetes
+    repoURL: 'https://github.com/berkguzel/vagrant-flask-dev-env.git'
+    targetRevision: main
+  project: default
+
