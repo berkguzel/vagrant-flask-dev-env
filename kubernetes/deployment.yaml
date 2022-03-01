@@ -15,7 +15,7 @@ spec:
         app: my-app
     spec:
       containers:
-      - image: 227500/flaskapi
+      - image: 227500/flask-api:v1.1
         name: my-image
         ports:
         - containerPort: 3000
